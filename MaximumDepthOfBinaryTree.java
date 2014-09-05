@@ -15,12 +15,13 @@ public class Solution {
         if(root.left == null && root.right == null){
             return 1;
         }
-        else if(root.left == null){
+/**     else if(root.left == null){
             return maxDepth(root.right)+1;
         }
         else if(root.right == null){
             return maxDepth(root.left)+1;
         }
+        **/
         else{
             int le = maxDepth(root.left);
             int ri = maxDepth(root.right);
