@@ -4,7 +4,7 @@ public class Solution {
             return 0;
         }
         if(A.length == 1){
-            if(A[0] < target){
+            if(target > A[0]){
                 return 1;
             }else return 0;
         }
@@ -12,13 +12,13 @@ public class Solution {
         int end = A.length - 1;
         while(start + 1 != end){
             int mid = start+ (end - start)/2;
-            if(A[mid] == target){
+            if(target == A[mid]){
                 return mid;
             }
-            if(A[mid] < target){
+            if(target > A[mid]){
                 start = mid;
             }
-            if(A[mid] > target){
+            if(target < A[mid]){
                 end = mid;
             }
         }
