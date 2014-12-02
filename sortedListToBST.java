@@ -36,18 +36,19 @@ public class Solution {
             tmp = tmp.next;  
         }  
         TreeNode root = null;  
-        root = recursion(array, 0, i-1, root);  
+        root = recursion(array, 0, i-1);  
         array = null;  
         return root;  
     }  
-    public TreeNode recursion(int[] array, int lhs, int rhs, TreeNode root)  
+    public TreeNode recursion(int[] array, int start, int end)  
     {  
-        if(lhs <= rhs)  
+        TreeNode root = null;
+        if(start <= end)  
         {  
-            int mid = (lhs + rhs) >> 1;  
+            int mid = (start + end) >> 1;  
             root = new TreeNode(array[mid]);  
-            root.left = recursion(array, lhs, mid - 1, root.left);  
-            root.right = recursion(array, mid + 1, rhs, root.right);  
+            root.left = recursion(array, start, mid - 1);  
+            root.right = recursion(array, mid + 1, end);  
         }  
         return root;  
     }  
