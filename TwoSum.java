@@ -31,3 +31,4 @@ public class TwoSum {
     	}
     }
 }
+// wait for better solution
